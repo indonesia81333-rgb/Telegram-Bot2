@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: gofile-telegram-bot
+    runtime: docker
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: API_ID
+        sync: false
+      - key: API_HASH
+        sync: false
+      - key: BOT_TOKEN
+        sync: false
+      - key: OWNER_ID
+        sync: false
+      - key: USER_SESSION
+        sync: false
+      - key: GOFILE_TOKEN
+        sync: false
+      - key: DEFAULT_EXPIRY_HOURS
+        value: "24"
+      - key: TIMEZONE
+        value: Asia/Kolkata
+      - key: DB_PATH
+        value: /app/data/bot.db
